@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\NotesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Not Routeları
+Route::get('/notes',[NotesController::class,'index'])->name('notes_index');
 
 Route::middleware([
     'auth:sanctum',
