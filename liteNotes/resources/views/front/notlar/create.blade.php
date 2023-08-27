@@ -1,4 +1,4 @@
-@extends('front.layouts.app')
+@extends('front.layouts.master')
 @section('content')
     @if($errors->any())
         <div class="alert alert-danger">

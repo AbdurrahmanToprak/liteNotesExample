@@ -32,8 +32,9 @@ Route::middleware([
     Route::get('/notes',[NotesController::class,'index'])->name('notes_index');
     Route::get('/notes/create',[NotesController::class,'create'])->name('notes_create');
     Route::post('/notes/store',[NotesController::class,'store'])->name('notes_store');
+    Route::get('/deneme',[NotesController::class,'show'])->name('notes_show');
 });
 
 Route::get('/', function (){
-    return view('front.layouts.master');
-});
+    return view('front.welcome');
+})->name('welcome');
