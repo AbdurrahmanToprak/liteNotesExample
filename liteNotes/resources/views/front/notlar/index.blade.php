@@ -1,6 +1,10 @@
-@extends('front.layouts.master')
+@extends('front.layouts.app')
 @section('content')
-<button class="btn btn-primary">Not Oluştur</button>
-
+<a class="btn btn-primary" href="{{route('notes_create')}}">Not Oluştur</a>
+@if(session('success'))
+    <div class="alert alert-success">
+        {{session('success')}}
+    </div>
+@endif
 @endsection
 

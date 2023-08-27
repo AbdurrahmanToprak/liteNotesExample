@@ -13,12 +13,11 @@ use App\Http\Controllers\NotesController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
-//Not Routeları
-Route::get('/notes',[NotesController::class,'index'])->name('notes_index');
+
 
 Route::middleware([
     'auth:sanctum',
@@ -28,8 +27,13 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    //Not Routeları
+    Route::get('/notes',[NotesController::class,'index'])->name('notes_index');
+    Route::get('/notes/create',[NotesController::class,'create'])->name('notes_create');
+    Route::post('/notes/store',[NotesController::class,'store'])->name('notes_store');
 });
 
-Route::get('/master', function (){
+Route::get('/', function (){
     return view('front.layouts.master');
 });
