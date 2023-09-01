@@ -1,36 +1,25 @@
 @extends('front.layouts.master')
 @section('content')
 
-        <a class="btn btn-primary" href="{{route('notes_create')}}">Not Oluştur</a>
+        <a class="btn btn-primary" href="{{route('notes_create')}}">Not Oluştur</a><br><br>
         @if(session('success'))
             <div class="alert alert-success">
                 {{session('success')}}
             </div>
         @endif
 
-    <div class="container">
-        <div class="col-12">
-            <table id="notestable" class="table table-hover">
-                <thead>
-                <tr>
-                    <td>No</td>
-                    <td>Başlık</td>
-                    <td>Not</td>
-                </tr>
-                @foreach($notes as $note)
-                    <tr>
-                        <td>{{$note->id}}</td>
-                        <td>{{$note->title}}</td>
-                        <td>{{$note->content}}</td>
-                        <td>
-                            <a class="btn btn-primary" href="#">Detay</a>
-                        </td>
-                    </tr>
+        @foreach($notes as $note)
+            <div class="card mt-3">
 
-                @endforeach
-                </thead>
-            </table>
-        </div>
-    </div>
+                <div class="card-header">
+                    <h1 style="color:#1f2937">{{$note->title}}</h1>
+                </div>
+
+                    <div class="card-body">
+                            <p>{{$note->content}}</p><br>
+                            <p><a class="btn btn-success" href="#">Detayları Görüntüle</a></p>
+                    </div>
+            </div>
+        @endforeach
 @endsection
 
