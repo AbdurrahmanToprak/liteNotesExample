@@ -21,7 +21,7 @@
             <textarea name="content" class="form-control" placeholder="Lütfen Not İçeriğini Giriniz " id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Gönder</button>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
     </form>
 
 @endsection
