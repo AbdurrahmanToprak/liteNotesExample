@@ -1,16 +1,14 @@
 @extends('front.layouts.master')
 @section('content')
-    <div class="container">
 
-            @foreach($notes as $note)
-                <div class="row">
-                    <div class="col-md-12 border-bottom">
-                        <h1 style="color:#1f2937">{{$note->title}}</h1>
-                        <p>{{$note->content}}</p><br>
-                        <p><a class="btn btn-primary" href="#">Detayları Görüntüle</a></p>
-                    </div>
-                </div><br><br>
 
-            @endforeach
-    </div>
+        <div class="bg-white p-3 rounded-3">
+            <h2 >{{$note->title}}</h2>
+            <p class="pt-3">{{$note->content}}</p>
+            <span class="block fs-6 text-muted mt-3 opacity-75">{{$note->updated_at->diffForHumans()}}</span>
+            <div class="d-flex justify-content-end">
+                <a class="btn btn-info mb-3 " href="#">Güncelle</a>
+            </div>
+        </div>
+
 @endsection
