@@ -8,18 +8,26 @@
             </div>
         @endif
 
-        @foreach($notes as $note)
-            <div class="card mt-3">
+        @if($notes->count() > 0)
+            @foreach($notes as $note)
+                <div class="bg-white border-bottom shadow-sm ~bg-body rounded-3 mb-3 p-3">
 
-                <div class="card-header">
-                    <h1 style="color:#1f2937">{{$note->title}}</h1>
+                        <h2 class="font-bold text-2xl" style="color:#1f2937">{{$note->title}}</h2>
+                        <p class="mt-3">{{Str::limit($note->content,100)}}</p>
+                        <span class="block fs-6 text-muted mt-3 mb-3 opacity-75">{{$note->updated_at->diffForHumans()}}</span>
+                        <a class="btn btn-success mt-3 mb-3" href="#">Detayları Görüntüle</a>
+
                 </div>
-
-                    <div class="card-body">
-                            <p>{{$note->content}}</p><br>
-                            <p><a class="btn btn-success" href="#">Detayları Görüntüle</a></p>
-                    </div>
+            @endforeach
+            <div class="d-flex justify-content-center">
+                {{$notes->links()}}
             </div>
-        @endforeach
+
+        @else
+            <div class="alert alert-danger">
+                Henüz Not Kaydetmediniz.
+            </div>
+        @endif
+
 @endsection
 

@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Lite Nots</title>
 </head>
-<body>
+<body style="background-color: #e2e2e2">
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary px-4" data-bs-theme="dark">
     <div class="container-fluid">
@@ -40,7 +40,7 @@
                                     {{\Illuminate\Support\Facades\Auth::user()->name}}
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a href="{{ route('profile.show') }}"> Profil </a></li>
                                     <li><a class="dropdown-item" href="#">Another action</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li>
