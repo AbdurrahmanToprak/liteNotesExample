@@ -35,6 +35,7 @@ Route::middleware([
     Route::get('/notes/detail/{id}',[NotesController::class,'show'])->name('notes_show');
     Route::get('/notes/edit/{id}',[NotesController::class,'edit'])->name('notes_edit');
     Route::post('/notes/update',[NotesController::class,'update'])->name('notes_update');
+    Route::get('/notes/delete/{id}',[NotesController::class,'destroy'])->name('notes_delete');
 });
 
 Route::get('/', function (){

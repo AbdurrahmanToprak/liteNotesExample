@@ -23,7 +23,7 @@
             <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="3">{{$note->content}}</textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Güncelle</button>
+        <button type="submit" class="btn btn-info">Güncelle</button>
     </form>
 
 @endsection
