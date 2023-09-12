@@ -5,21 +5,17 @@
         @if(session('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{session('success')}}
-                <div class="d-flex justify-content-end mb-4">
-                    <button type="button" class="btn btn-danger close d-flex justify-content-end" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
         @endif
         @if(session('delete'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 {{session('delete')}}
-                <div class="d-flex justify-content-end mb-4 pt-0">
-                    <button type="button" class="btn btn-danger close d-flex justify-content-end" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
 
             </div>
         @endif

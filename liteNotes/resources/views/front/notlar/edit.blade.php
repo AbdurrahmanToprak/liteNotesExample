@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @section('content')
-    <h1>Güncelleme Sayfası</h1>
+    <h1>Update Page</h1>
     @if($errors->any())
         <div class="alert alert-danger">
             <ul>

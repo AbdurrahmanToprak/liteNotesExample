@@ -5,12 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <title>Lite Nots</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    <title>Lite Nots</title>
 </head>
 <body style="background-color: #e2e2e2">
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary px-4" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{route('welcome')}}">
             <img src="{{asset('asset/image/note.jpg')}}" height="30">
@@ -36,36 +35,39 @@
                                      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                                  </li>-->
                             <li class="nav-item dropdown ">
-                                <a class="nav-link active dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{\Illuminate\Support\Facades\Auth::user()->name}}
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ route('profile.show') }}"> Profil </a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <div class="block fs-6 text-muted px-4 py-2 mt-3 opacity-75" style="font-size: small">
+                                        {{ __('Manage Account') }}
+                                    </div>
+                                    <a class="dropdown-item " href="{{ route('profile.show') }}"> Profile </a>
+                                    <div class="dropdown-divider"></div>
+
                                         <form method="POST" action="{{ route('logout') }}" >
                                             @csrf
 
-                                            <a class="btn btn-danger" href="{{ route('logout') }}"
+                                            <a class="dropdown-item" style="color: red" href="{{ route('logout') }}"
                                                onclick="event.preventDefault(); this.closest('form').submit();">
                                                 {{ __('Log Out') }}
                                             </a>
                                         </form>
-                                    </li>
-                                </ul>
+
+                                </div>
                             </li>
                         </ul>
                     @else
+
                         <div class="btn btn-success">
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+                        <a style="color: white" href="{{ route('login') }}" >Log in</a>
                         </div>
                             @if (Route::has('register'))
                             <div class="btn btn-success">
-                                <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                                <a style="color: white" href="{{ route('register') }}">Register</a>
                             </div>
                             @endif
-
 
                     @endauth
                 </div>
@@ -80,8 +82,18 @@
     </div>
 
 </div>
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<hr>
+<div class="container">
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="{{route('welcome')}}" class="nav-link px-2 text-muted">Ana Sayfa</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Hakkımızda</a></li>
+        </ul>
+        <p class="text-center text-muted">© 2023 LiteNotes, Inc</p>
+    </footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

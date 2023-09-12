@@ -14,11 +14,11 @@
         @csrf
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Başlık</label>
-            <input type="text" name="title" class="form-control" placeholder="Lütfen Not Başlığı Giriniz" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" name="title" class="form-control" placeholder="Lütfen Başlık Alanını Doldurunuz" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">İçerik</label>
-            <textarea name="content" class="form-control" placeholder="Lütfen Not İçeriğini Giriniz " id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea name="content" class="form-control" placeholder="Lütfen İçerik Alanını Doldurunuz" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Kaydet</button>

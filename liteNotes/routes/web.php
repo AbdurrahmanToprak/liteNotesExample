@@ -41,3 +41,6 @@ Route::middleware([
 Route::get('/', function (){
     return view('front.welcome');
 })->name('welcome');
+/*Route::get('/', function (){
+    return view('front.notlar.deneme');
+})->name('welcome');*/
