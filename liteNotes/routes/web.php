@@ -32,10 +32,10 @@ Route::middleware([
     Route::get('/notes',[NotesController::class,'index'])->name('notes_index');
     Route::get('/notes/create',[NotesController::class,'create'])->name('notes_create');
     Route::post('/notes/store',[NotesController::class,'store'])->name('notes_store');
-    Route::get('/notes/detail/{id}',[NotesController::class,'show'])->name('notes_show');
-    Route::get('/notes/edit/{id}',[NotesController::class,'edit'])->name('notes_edit');
+    Route::get('/notes/detail/{uuid}',[NotesController::class,'show'])->name('notes_show');
+    Route::get('/notes/edit/{uuid}',[NotesController::class,'edit'])->name('notes_edit');
     Route::post('/notes/update',[NotesController::class,'update'])->name('notes_update');
-    Route::get('/notes/delete/{id}',[NotesController::class,'destroy'])->name('notes_delete');
+    Route::get('/notes/delete/{uuid}',[NotesController::class,'destroy'])->name('notes_delete');
 });
 
 Route::get('/', function (){

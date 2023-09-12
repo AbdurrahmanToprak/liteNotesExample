@@ -28,7 +28,7 @@
                     <p class="mt-3">{{Str::limit($note->content,100)}}</p>
                     <span class="block fs-6 text-muted mt-3 mb-3 opacity-75">{{$note->updated_at->diffForHumans()}}</span>
                    <div class="d-flex justify-content-end">
-                       <a class="btn btn-success" href="{{route('notes_show',$note->id)}}">Detayları Görüntüle</a>
+                       <a class="btn btn-success" href="{{route('notes_show',$note->uuid)}}">Detayları Görüntüle</a>
                    </div>
 
 
